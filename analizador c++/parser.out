@@ -1,0 +1,211 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    ASSIGN
+    COLON
+    COMMA
+    ERROR
+    ID
+    PLUS
+
+Grammar
+
+Rule 0     S' -> includes
+Rule 1     includes -> HASH INCLUDE LT IOSTREAM GT INT MAIN LPAREN RPAREN LBRACE STD DOUBLECOLON COUT LT LT STRING SEMI RETURN NUMBER SEMI RBRACE
+
+Terminals, with rules where they appear
+
+ASSIGN               : 
+COLON                : 
+COMMA                : 
+COUT                 : 1
+DOUBLECOLON          : 1
+ERROR                : 
+GT                   : 1
+HASH                 : 1
+ID                   : 
+INCLUDE              : 1
+INT                  : 1
+IOSTREAM             : 1
+LBRACE               : 1
+LPAREN               : 1
+LT                   : 1 1 1
+MAIN                 : 1
+NUMBER               : 1
+PLUS                 : 
+RBRACE               : 1
+RETURN               : 1
+RPAREN               : 1
+SEMI                 : 1 1
+STD                  : 1
+STRING               : 1
+error                : 
+
+Nonterminals, with rules where they appear
+
+includes             : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . includes
+    (1) includes -> . HASH INCLUDE LT IOSTREAM GT INT MAIN LPAREN RPAREN LBRACE STD DOUBLECOLON COUT LT LT STRING SEMI RETURN NUMBER SEMI RBRACE
+
+    HASH            shift and go to state 2
+
+    includes                       shift and go to state 1
+
+state 1
+
+    (0) S' -> includes .
+
+
+
+state 2
+
+    (1) includes -> HASH . INCLUDE LT IOSTREAM GT INT MAIN LPAREN RPAREN LBRACE STD DOUBLECOLON COUT LT LT STRING SEMI RETURN NUMBER SEMI RBRACE
+
+    INCLUDE         shift and go to state 3
+
+
+state 3
+
+    (1) includes -> HASH INCLUDE . LT IOSTREAM GT INT MAIN LPAREN RPAREN LBRACE STD DOUBLECOLON COUT LT LT STRING SEMI RETURN NUMBER SEMI RBRACE
+
+    LT              shift and go to state 4
+
+
+state 4
+
+    (1) includes -> HASH INCLUDE LT . IOSTREAM GT INT MAIN LPAREN RPAREN LBRACE STD DOUBLECOLON COUT LT LT STRING SEMI RETURN NUMBER SEMI RBRACE
+
+    IOSTREAM        shift and go to state 5
+
+
+state 5
+
+    (1) includes -> HASH INCLUDE LT IOSTREAM . GT INT MAIN LPAREN RPAREN LBRACE STD DOUBLECOLON COUT LT LT STRING SEMI RETURN NUMBER SEMI RBRACE
+
+    GT              shift and go to state 6
+
+
+state 6
+
+    (1) includes -> HASH INCLUDE LT IOSTREAM GT . INT MAIN LPAREN RPAREN LBRACE STD DOUBLECOLON COUT LT LT STRING SEMI RETURN NUMBER SEMI RBRACE
+
+    INT             shift and go to state 7
+
+
+state 7
+
+    (1) includes -> HASH INCLUDE LT IOSTREAM GT INT . MAIN LPAREN RPAREN LBRACE STD DOUBLECOLON COUT LT LT STRING SEMI RETURN NUMBER SEMI RBRACE
+
+    MAIN            shift and go to state 8
+
+
+state 8
+
+    (1) includes -> HASH INCLUDE LT IOSTREAM GT INT MAIN . LPAREN RPAREN LBRACE STD DOUBLECOLON COUT LT LT STRING SEMI RETURN NUMBER SEMI RBRACE
+
+    LPAREN          shift and go to state 9
+
+
+state 9
+
+    (1) includes -> HASH INCLUDE LT IOSTREAM GT INT MAIN LPAREN . RPAREN LBRACE STD DOUBLECOLON COUT LT LT STRING SEMI RETURN NUMBER SEMI RBRACE
+
+    RPAREN          shift and go to state 10
+
+
+state 10
+
+    (1) includes -> HASH INCLUDE LT IOSTREAM GT INT MAIN LPAREN RPAREN . LBRACE STD DOUBLECOLON COUT LT LT STRING SEMI RETURN NUMBER SEMI RBRACE
+
+    LBRACE          shift and go to state 11
+
+
+state 11
+
+    (1) includes -> HASH INCLUDE LT IOSTREAM GT INT MAIN LPAREN RPAREN LBRACE . STD DOUBLECOLON COUT LT LT STRING SEMI RETURN NUMBER SEMI RBRACE
+
+    STD             shift and go to state 12
+
+
+state 12
+
+    (1) includes -> HASH INCLUDE LT IOSTREAM GT INT MAIN LPAREN RPAREN LBRACE STD . DOUBLECOLON COUT LT LT STRING SEMI RETURN NUMBER SEMI RBRACE
+
+    DOUBLECOLON     shift and go to state 13
+
+
+state 13
+
+    (1) includes -> HASH INCLUDE LT IOSTREAM GT INT MAIN LPAREN RPAREN LBRACE STD DOUBLECOLON . COUT LT LT STRING SEMI RETURN NUMBER SEMI RBRACE
+
+    COUT            shift and go to state 14
+
+
+state 14
+
+    (1) includes -> HASH INCLUDE LT IOSTREAM GT INT MAIN LPAREN RPAREN LBRACE STD DOUBLECOLON COUT . LT LT STRING SEMI RETURN NUMBER SEMI RBRACE
+
+    LT              shift and go to state 15
+
+
+state 15
+
+    (1) includes -> HASH INCLUDE LT IOSTREAM GT INT MAIN LPAREN RPAREN LBRACE STD DOUBLECOLON COUT LT . LT STRING SEMI RETURN NUMBER SEMI RBRACE
+
+    LT              shift and go to state 16
+
+
+state 16
+
+    (1) includes -> HASH INCLUDE LT IOSTREAM GT INT MAIN LPAREN RPAREN LBRACE STD DOUBLECOLON COUT LT LT . STRING SEMI RETURN NUMBER SEMI RBRACE
+
+    STRING          shift and go to state 17
+
+
+state 17
+
+    (1) includes -> HASH INCLUDE LT IOSTREAM GT INT MAIN LPAREN RPAREN LBRACE STD DOUBLECOLON COUT LT LT STRING . SEMI RETURN NUMBER SEMI RBRACE
+
+    SEMI            shift and go to state 18
+
+
+state 18
+
+    (1) includes -> HASH INCLUDE LT IOSTREAM GT INT MAIN LPAREN RPAREN LBRACE STD DOUBLECOLON COUT LT LT STRING SEMI . RETURN NUMBER SEMI RBRACE
+
+    RETURN          shift and go to state 19
+
+
+state 19
+
+    (1) includes -> HASH INCLUDE LT IOSTREAM GT INT MAIN LPAREN RPAREN LBRACE STD DOUBLECOLON COUT LT LT STRING SEMI RETURN . NUMBER SEMI RBRACE
+
+    NUMBER          shift and go to state 20
+
+
+state 20
+
+    (1) includes -> HASH INCLUDE LT IOSTREAM GT INT MAIN LPAREN RPAREN LBRACE STD DOUBLECOLON COUT LT LT STRING SEMI RETURN NUMBER . SEMI RBRACE
+
+    SEMI            shift and go to state 21
+
+
+state 21
+
+    (1) includes -> HASH INCLUDE LT IOSTREAM GT INT MAIN LPAREN RPAREN LBRACE STD DOUBLECOLON COUT LT LT STRING SEMI RETURN NUMBER SEMI . RBRACE
+
+    RBRACE          shift and go to state 22
+
+
+state 22
+
+    (1) includes -> HASH INCLUDE LT IOSTREAM GT INT MAIN LPAREN RPAREN LBRACE STD DOUBLECOLON COUT LT LT STRING SEMI RETURN NUMBER SEMI RBRACE .
+
+    $end            reduce using rule 1 (includes -> HASH INCLUDE LT IOSTREAM GT INT MAIN LPAREN RPAREN LBRACE STD DOUBLECOLON COUT LT LT STRING SEMI RETURN NUMBER SEMI RBRACE .)
+

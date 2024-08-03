@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analizador Léxico</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <h1>Analizador Léxico</h1>
+    <form method="post">
+        <label for="input_text">Ingrese el texto a analizar:</label>
+        <textarea id="input_text" name="input_text" rows="5"></textarea>
+        <br>
+        <input type="submit" value="Analizar">
+    </form>
+
+    {% if errores_sintacticos %}
+    <div>
+        <h2>Errores sintácticos:</h2>
+        <table>
+            <tr>
+                <th>Error</th>
+            </tr>
+            {% for error in errores_sintacticos %}
+            <tr class="error">
+                <td>{{ error }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+
+    {% if tokens_reconocidos %}
+    <div>
+        <h2>Tokens reconocidos:</h2>
+        <table>
+            <tr>
+                <th>Tipo de Token</th>
+                <th>Valor</th>
+                <th>Línea</th>
+                <th>Posición</th>
+                <th>Categoría</th>
+            </tr>
+            {% for token in tokens_reconocidos %}
+            <tr>
+                <td>{{ token[0] }}</td>
+                <td>{{ token[1] }}</td>
+                <td>{{ token[2] }}</td>
+                <td>{{ token[3] }}</td>
+                <td>{{ token[4] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div>
+        <h2>Resumen de Tokens:</h2>
+        <table>
+            <tr>
+                <th>Categoría</th>
+                <th>Total</th>
+            </tr>
+            {% for category, count in tokens_clasificados.items() %}
+            <tr>
+                <td>{{ category }}</td>
+                <td>{{ count|length }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+
+</body>
+</html>
